@@ -1,0 +1,21 @@
+---
+
+- name: Update APT Cache
+  hosts: all
+  become: yes
+  roles:
+    - common
+
+- name: Configuring NFS SRV
+  hosts: NFS_SERVER
+  become: yes
+  roles:
+    - nfs_server
+
+- name: Configuring NFS Client
+  hosts: NFS_CLIENT
+  become: yes
+  roles:
+    - nfs_client
+
+...
